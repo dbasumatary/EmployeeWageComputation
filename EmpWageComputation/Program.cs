@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             EmployeeWage employeeWage = new EmployeeWage();
-            employeeWage.WelcomeMessage();
+            employeeWage.PresentOrAbsent();
         }
     }
 }
