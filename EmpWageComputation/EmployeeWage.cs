@@ -68,5 +68,30 @@ namespace EmpWageComputation
         {
             int value = DailyEmployeeWage();
         }
+
+        //UC4-Calculating part time employee wages using switch case(assuming part time - 4hrs)
+        public int UsingSwitchCase()
+        {
+            int value = PresentOrAbsent();
+            int employeeHours;
+            switch (value)
+            {
+                case 1:
+                    employeeHours = FULL_WORKING_HOURS;
+                    break;
+                case 2:
+                    employeeHours = PART_WORKING_HOURS;
+                    break;
+
+                default:
+                    employeeHours = 0;
+                    break;
+            }
+
+            int dailyEmpWage = employeeHours * WAGE_PER_HOUR;
+
+            Console.WriteLine("Daily Wage : " + dailyEmpWage);
+            return dailyEmpWage;
+        }
     }
 }
