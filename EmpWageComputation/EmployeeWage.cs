@@ -62,5 +62,11 @@ namespace EmpWageComputation
             Console.WriteLine("Daily Wage : " + dailyEmpWage);
             return dailyEmpWage;
         }
+
+        //UC3-Calculating part time employee wages (assuming part time - 4hrs)
+        public void PartTimeWage()
+        {
+            int value = DailyEmployeeWage();
+        }
     }
 }

@@ -6,7 +6,8 @@
         {
             EmployeeWage employeeWage = new EmployeeWage();
             //employeeWage.PresentOrAbsent();
-            employeeWage.DailyEmployeeWage();
+            //employeeWage.DailyEmployeeWage();
+            employeeWage.PartTimeWage();
         }
     }
 }
