@@ -14,9 +14,10 @@ namespace EmpWageComputation
         public const byte PART_WORKING_HOURS = 4;
         public const int WAGE_PER_HOUR = 20;
         public const byte WORKING_DAYS_PER_MONTH = 20;
+        public const int MAX_HOURS_IN_MONTH = 100;
 
         //Random number generation to check attendance
-        public int CheckAttendance(int lower, int upper)
+        public static int CheckAttendance(int lower, int upper)
         {
             Random random = new Random();
             int value = random.Next(lower, upper);
@@ -106,6 +107,40 @@ namespace EmpWageComputation
             }
             Console.WriteLine("\nThe total wages for the whole month is " + monthlyEmpWage);
             return monthlyEmpWage;
+        }
+
+
+        //UC6-Calculating wages till total working hours is reached(100 working hours in 20 days)
+        public void WagesForTotalWorkHours()
+        {
+            int totalEmpHours = 0; int workingDays = 0;
+
+            while (totalEmpHours <= MAX_HOURS_IN_MONTH && workingDays < WORKING_DAYS_PER_MONTH)
+            {
+                workingDays++;
+                int value = PresentOrAbsent();
+                int employeeHours;
+                switch (value)
+                {
+                    case 1:
+                        employeeHours = FULL_WORKING_HOURS;
+                        break;
+                    case 2:
+                        employeeHours = PART_WORKING_HOURS;
+                        break;
+
+                    default:
+                        employeeHours = 0;
+                        break;
+                }
+
+                totalEmpHours = totalEmpHours + employeeHours;
+                Console.WriteLine("Day: " + workingDays + " - Employee working hours: " + employeeHours);
+            }
+
+            int totalEmployeeWage = totalEmpHours * WAGE_PER_HOUR;
+            Console.WriteLine("\nThe total working hours of an employee: " + totalEmpHours);
+            Console.WriteLine("The total employee wage: " + totalEmployeeWage);
         }
     }
 }

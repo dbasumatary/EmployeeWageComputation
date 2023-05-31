@@ -9,7 +9,8 @@
             //employeeWage.DailyEmployeeWage();
             //employeeWage.PartTimeWage();
             //employeeWage.UsingSwitchCase();
-            employeeWage.MonthlyWages();
+            //employeeWage.MonthlyWages();
+            employeeWage.WagesForTotalWorkHours();
         }
     }
 }
