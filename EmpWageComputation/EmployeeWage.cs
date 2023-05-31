@@ -44,5 +44,23 @@ namespace EmpWageComputation
                 return 0;
             }
         }
+
+        //UC2-Calculate Daily Employee Wage
+        public int DailyEmployeeWage()
+        {
+            int value = PresentOrAbsent();
+            int employeeHours;
+            if (value == FULL_TIME)
+                employeeHours = FULL_WORKING_HOURS;
+            else if (value == PART_TIME)
+                employeeHours = PART_WORKING_HOURS;
+            else
+                employeeHours = 0;
+
+            int dailyEmpWage = employeeHours * WAGE_PER_HOUR;
+
+            Console.WriteLine("Daily Wage : " + dailyEmpWage);
+            return dailyEmpWage;
+        }
     }
 }
