@@ -93,5 +93,19 @@ namespace EmpWageComputation
             Console.WriteLine("Daily Wage : " + dailyEmpWage);
             return dailyEmpWage;
         }
+
+        //UC5-Calculating wages for a month(assume 20 working days per month)
+        public int MonthlyWages()
+        {
+            int monthlyEmpWage = 0;
+
+            for (int i = 1; i <= WORKING_DAYS_PER_MONTH; i++)
+            {
+                int dailyEmpWage = DailyEmployeeWage();
+                monthlyEmpWage += dailyEmpWage;
+            }
+            Console.WriteLine("\nThe total wages for the whole month is " + monthlyEmpWage);
+            return monthlyEmpWage;
+        }
     }
 }

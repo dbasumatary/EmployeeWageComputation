@@ -8,7 +8,8 @@
             //employeeWage.PresentOrAbsent();
             //employeeWage.DailyEmployeeWage();
             //employeeWage.PartTimeWage();
-            employeeWage.UsingSwitchCase();
+            //employeeWage.UsingSwitchCase();
+            employeeWage.MonthlyWages();
         }
     }
 }
